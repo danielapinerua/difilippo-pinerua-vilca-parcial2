@@ -15,7 +15,7 @@ class ReparacionController extends Controller
         
     $reparaciones = Reparacion::all();
 
-    return view('reparaciones.index', compact('reparaciones'));
+    return view('pages.index', compact('reparaciones'));
 
     }
 
