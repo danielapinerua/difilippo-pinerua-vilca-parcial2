@@ -12,21 +12,15 @@ class PageController extends Controller
         return view('pages.home');
     }
 
-    public function index()
-    {
-        $reparaciones = Reparacion::all();
-        return view('pages.index', compact('reparaciones'));
-    }
-
     public function create()
     {
         return view('pages.create');
     }
 
-    public function store(Request $request)
+   /* public function store(Request $request)
     {
         Reparacion::create($request->all());
 
         return redirect('/reparaciones');
-    }
+    }*/
 }
