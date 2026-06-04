@@ -2,9 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\Reparacion;
-
 class PageController extends Controller
 {
     public function home()

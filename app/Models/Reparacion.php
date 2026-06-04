@@ -9,11 +9,26 @@ class Reparacion extends Model
     protected $table = 'reparaciones';
     
     protected $fillable = [
-        'cliente',
-        'marca',
-        'modelo',
         'descripcion_falla',
         'fecha_ingreso',
-        'estado'
+        'estado',
+        'celular_id',
+        'cliente_id',
+        'usuario_id'
     ];
+
+    public function celular()
+    {
+        return $this->belongsTo(Celular::class, 'celular_id');
+    }
+
+    public function cliente()
+    {
+        return $this->belongsTo(Cliente::class, 'cliente_id');
+    }
+
+    public function usuario()
+    {
+        return $this->belongsTo(Usuario::class, 'usuario_id');
+    }
 }
