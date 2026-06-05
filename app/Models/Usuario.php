@@ -4,8 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Usuario extends Model
+class Usuario extends Authenticatable
 {
     use HasFactory;
 
@@ -21,9 +22,9 @@ class Usuario extends Model
         'password',
     ];
 
-    protected $casts = [
-        'password' => 'hashed',
-    ];
+    //protected $casts = [
+     //   'password' => 'hashed',
+    //];
 
     public function reparaciones()
     {

@@ -14,7 +14,7 @@ class LoginController extends Controller
             return redirect()->route('home');
         }
 
-        return view('login');
+        return view('auth.login');
     }
 
     public function login(Request $request)
@@ -26,7 +26,7 @@ class LoginController extends Controller
         
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->intended(route('home'));
+            return redirect()->route('reparaciones.index');
         }
 
         return back()
