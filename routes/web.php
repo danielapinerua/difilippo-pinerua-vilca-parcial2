@@ -9,3 +9,9 @@ Route::get('/contact', [PageController::class, 'contact'])->name('contact');
 
 use App\Http\Controllers\ReparacionController;
 Route::resource('reparaciones', ReparacionController::class);
+
+use App\Http\Controllers\MarcaController;
+Route::resource('marcas', MarcaController::class);
+
+use App\Http\Controllers\CelularController;
+Route::resource('celulares', CelularController::class);

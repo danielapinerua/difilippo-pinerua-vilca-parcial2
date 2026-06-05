@@ -34,12 +34,14 @@ class MarcaController extends Controller
     public function show(string $id)
     {
         $marca = Marca::findOrFail($id);
+
         return view('marcas.show', compact('marca'));
     }
 
     public function edit(string $id)
     {
         $marca = Marca::findOrFail($id);
+
         return view('marcas.edit', compact('marca'));
     }
 
@@ -59,6 +61,7 @@ class MarcaController extends Controller
     {
         $marca = Marca::findOrFail($id);
         $marca->delete();
+        
         return redirect()->route('marcas.index');
     }
 }
