@@ -11,10 +11,8 @@ class PageController extends Controller
 
 
 
-   /* public function store(Request $request)
+    public function about()
     {
-        Reparacion::create($request->all());
-
-        return redirect('/reparaciones');
-    }*/
+        return view('pages.about');
+    }
 }

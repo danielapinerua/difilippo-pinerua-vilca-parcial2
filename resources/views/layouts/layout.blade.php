@@ -11,6 +11,7 @@
 
         <nav>
             <a href="{{ route('home') }}">Inicio</a> |
+            <a href="{{ route('about') }}">Acerca de Nosotros</a>
             <a href="{{ route('clientes.index') }}">Clientes</a> |
             <a href="{{ route('marcas.index') }}">Marcas</a> |
             <a href="{{ route('celulares.index') }}">Celulares</a> |
