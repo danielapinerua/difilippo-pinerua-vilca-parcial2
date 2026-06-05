@@ -22,9 +22,9 @@ class Usuario extends Authenticatable
         'password',
     ];
 
-    //protected $casts = [
-     //   'password' => 'hashed',
-    //];
+    protected $casts = [
+        'password' => 'hashed',
+    ];
 
     public function reparaciones()
     {
