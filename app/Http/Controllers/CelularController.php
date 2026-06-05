@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\CelularRequest;
 use App\Models\Celular;
 use App\Models\Marca;
 
@@ -24,12 +24,9 @@ class CelularController extends Controller
         return view('celulares.create', compact('marcas'));
     }
 
-    public function store(Request $request)
+    public function store(CelularRequest $request)
     {
-        $validated = $request->validate([
-        'marca_id' => 'required|exists:marcas,id',
-        'modelo' => 'required|string'
-        ]);
+        $validated = $request->validated();
         
         Celular::create($validated);
 
@@ -53,12 +50,9 @@ class CelularController extends Controller
          return view('celulares.edit', compact('celular', 'marcas'));
     }
    
-    public function update(Request $request, string $id)
+    public function update(CelularRequest $request, string $id)
     {
-        $validated = $request->validate([
-            'marca_id' => 'required|exists:marcas,id',
-            'modelo' => 'required|string'
-        ]);
+        $validated = $request->validated();
         
         $celular = Celular::findOrFail($id);
         $celular->update($validated);

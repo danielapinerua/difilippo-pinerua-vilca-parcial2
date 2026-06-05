@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\StoreMarcaRequest;
+use App\Http\Requests\UpdateMarcaRequest;
 use App\Models\Marca;
 
 class MarcaController extends Controller
@@ -20,11 +21,9 @@ class MarcaController extends Controller
         return view('marcas.create');
     }
 
-    public function store(Request $request)
+    public function store(StoreMarcaRequest $request)
     {
-        $validated = $request->validate([
-            'nombre' => 'required|string|unique:marcas'
-        ]);
+        $validated = $request->validated();
 
         Marca::create($validated);
 
@@ -45,12 +44,10 @@ class MarcaController extends Controller
         return view('marcas.edit', compact('marca'));
     }
 
-    public function update(Request $request, string $id)
+    public function update(UpdateMarcaRequest $request, string $id)
     {
         $marca = Marca::findOrFail($id);
-        $validated = $request->validate([
-            'nombre' => 'required|string|unique:marcas,nombre,' . $id
-        ]);
+        $validated = $request->validated();
         
         $marca->update($validated);
         

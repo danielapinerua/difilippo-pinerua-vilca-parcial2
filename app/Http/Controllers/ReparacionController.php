@@ -6,7 +6,7 @@ use App\Models\Celular;
 use App\Models\Cliente;
 use App\Models\Reparacion;
 use App\Models\Usuario;
-use Illuminate\Http\Request;
+use App\Http\Requests\ReparacionRequest;
 
 class ReparacionController extends Controller
 {
@@ -26,16 +26,9 @@ class ReparacionController extends Controller
         return view('reparaciones.create', compact('clientes', 'usuarios', 'celulares'));
     }
 
-    public function store(Request $request)
+    public function store(ReparacionRequest $request)
     {
-        $validated = $request->validate([
-            'celular_id' => 'required|exists:celulares,id',
-            'cliente_id' => 'required|exists:clientes,id',
-            'usuario_id' => 'required|exists:usuarios,id',
-            'descripcion_falla' => 'required|string',
-            'fecha_ingreso' => 'required|date',
-            'estado' => 'required|in:Ingresado,Reparando,Reparado,Entregado'
-        ]);
+        $validated = $request->validated();
 
         Reparacion::create($validated);
 
@@ -58,16 +51,9 @@ class ReparacionController extends Controller
         return view('reparaciones.edit', compact('reparacion', 'clientes', 'usuarios', 'celulares'));
     }
 
-    public function update(Request $request, string $id)
+    public function update(ReparacionRequest $request, string $id)
     {
-        $validated = $request->validate([
-            'celular_id' => 'required|exists:celulares,id',
-            'cliente_id' => 'required|exists:clientes,id',
-            'usuario_id' => 'required|exists:usuarios,id',
-            'descripcion_falla' => 'required|string',
-            'fecha_ingreso' => 'required|date',
-            'estado' => 'required|in:Ingresado,Reparando,Reparado,Entregado'
-        ]);
+        $validated = $request->validated();
 
         $reparacion = Reparacion::findOrFail($id);
         $reparacion->update($validated);

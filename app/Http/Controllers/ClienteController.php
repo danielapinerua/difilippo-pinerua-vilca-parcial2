@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\StoreClienteRequest;
+use App\Http\Requests\UpdateClienteRequest;
 use App\Models\Cliente;
 
 class ClienteController extends Controller
@@ -19,12 +20,9 @@ class ClienteController extends Controller
         return view('clientes.create');
     }
 
-    public function store(Request $request)
+    public function store(StoreClienteRequest $request)
     {
-        $validated = $request->validate([
-            'nombre' => 'required|string|unique:clientes',
-            'telefono' => 'required|string'
-        ]);
+        $validated = $request->validated();
 
         Cliente::create($validated);
 
@@ -45,13 +43,10 @@ class ClienteController extends Controller
         return view('clientes.edit', compact('cliente'));
     }
 
-    public function update(Request $request, string $id)
+    public function update(UpdateClienteRequest $request, string $id)
     {
         $cliente = Cliente::findOrFail($id);
-        $validated = $request->validate([
-            'nombre' => 'required|string|unique:clientes,nombre,' . $id,
-            'telefono' => 'required|string'
-        ]);
+        $validated = $request->validated();
         
         $cliente->update($validated);
         
