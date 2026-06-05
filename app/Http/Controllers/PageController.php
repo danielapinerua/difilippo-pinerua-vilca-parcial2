@@ -6,13 +6,10 @@ class PageController extends Controller
 {
     public function home()
     {
-        return view('pages.home');
+        return view('home');
     }
 
-    public function create()
-    {
-        return view('pages.create');
-    }
+
 
    /* public function store(Request $request)
     {
