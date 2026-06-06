@@ -1,0 +1,24 @@
+.about-container {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.about-container h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #162446;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+}
+
+.about-container p {
+    font-size: 1rem;
+    color: #6e6e73;
+    line-height: 1.8;
+    margin-bottom: 1.2rem;
+}
+
+.about-container p:last-child {
+    color: #162446;
+    font-weight: 500;
+}

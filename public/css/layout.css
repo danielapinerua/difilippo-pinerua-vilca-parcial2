@@ -1,0 +1,109 @@
+/* =============================================
+   layout.css — Estilo moderno minimalista
+   ============================================= */
+
+:root {
+    --azul-oscuro: #162446;
+    --azul-medio: #415a9c;
+    --azul-claro: #7596fe;
+    --gris-fondo: #f5f5f7;
+    --gris-borde: #e0e0e5;
+    --texto-principal: #1d1d1f;
+    --texto-secundario: #6e6e73;
+    --blanco: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
+    background-color: var(--gris-fondo);
+    color: var(--texto-principal);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    -webkit-font-smoothing: antialiased;
+}
+
+header {
+    background-color: var(--blanco);
+    border-bottom: 1px solid var(--gris-borde);
+    padding: 0 2.5rem;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header h1 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--azul-oscuro);
+    letter-spacing: -0.01em;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+nav a {
+    color: var(--texto-secundario);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 400;
+    transition: color 0.2s ease;
+}
+
+nav a:hover {
+    color: var(--texto-principal);
+}
+
+nav form button {
+    background-color: var(--azul-oscuro);
+    color: var(--blanco);
+    border: none;
+    padding: 0.45rem 1.1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+nav form button:hover {
+    background-color: var(--azul-medio);
+}
+
+nav form button:active {
+    transform: scale(0.97);
+}
+
+hr {
+    display: none;
+}
+
+main {
+    flex: 1;
+    padding: 2.5rem;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+footer {
+    background-color: var(--blanco);
+    border-top: 1px solid var(--gris-borde);
+    color: var(--texto-secundario);
+    text-align: center;
+    padding: 1.2rem;
+    font-size: 0.8rem;
+}
