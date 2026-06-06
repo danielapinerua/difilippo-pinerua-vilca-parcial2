@@ -33,6 +33,7 @@
 
                 <a href="{{ route('reparaciones.edit', $reparacion->id) }}">Editar</a>
 
+
                 <form action="{{ route('reparaciones.destroy', $reparacion->id) }}" method="POST" style="display:inline;">
                     @csrf
                     @method('DELETE')
@@ -46,6 +47,8 @@
 @else
 No hay reparaciones cargadas.
 @endif
+
+<a href="{{ route('reparaciones.create') }}">Nueva reparación</a>
 
 <br>
 
