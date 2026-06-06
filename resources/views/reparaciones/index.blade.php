@@ -46,4 +46,7 @@
 @else
 No hay reparaciones cargadas.
 @endif
+
 <br>
+
+@endsection
