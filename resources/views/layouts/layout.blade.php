@@ -28,14 +28,9 @@
         </nav>
     </header>
 
-
-    <hr>
-
     <main>
         @yield('content')
     </main>
-
-    <hr>
 
     <footer>
         <p>© 2026 - Da Vinci</p>
