@@ -16,8 +16,10 @@
             <a href="{{ route('about') }}">Acerca de Nosotros</a> |
             
             @auth
-                <a href="{{ route('reparaciones.index') }}">Reparaciones</a>
-                
+                <a href="{{ route('reparaciones.index') }}">Reparaciones</a> |
+                <a href="{{ route('clientes.index') }}">Clientes</a> |
+                <a href="{{ route('celulares.index') }}">Celulares</a> |
+                <a href="{{ route('marcas.index') }}">Marcas</a>
                 <form action="{{ route('logout') }}" method="POST" style="display:inline;">
                     @csrf
                     <button type="submit">Cerrar Sesión</button>

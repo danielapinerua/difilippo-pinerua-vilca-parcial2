@@ -22,7 +22,7 @@ class ReparacionController extends Controller
         $clientes = Cliente::all();
         $usuarios = Usuario::all();
         $celulares = Celular::with('marca')->get();
-        
+
         return view('reparaciones.create', compact('clientes', 'usuarios', 'celulares'));
     }
 

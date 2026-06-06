@@ -2,7 +2,9 @@
 @section('title', 'Reparaciones')
 
 @section('content')
-<h2>Listado de Reparaciones</h2>
+<section>
+    <h2>Listado de Reparaciones</h2>
+    <div>
 <p>Bienvenida, {{ auth()->user()->name }}</p>
 
 @if(session('success'))
@@ -51,5 +53,6 @@ No hay reparaciones cargadas.
 <a href="{{ route('reparaciones.create') }}">Nueva reparación</a>
 
 <br>
-
+    </div>
+</section>
 @endsection

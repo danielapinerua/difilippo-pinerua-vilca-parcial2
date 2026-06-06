@@ -16,6 +16,7 @@ class ReparacionRequest extends FormRequest
         return [
             'celular_id' => 'required|exists:celulares,id',
             'cliente_id' => 'required|exists:clientes,id',
+            'usuario_id' => 'required|exists:usuarios,id',
             'descripcion_falla' => 'required|string',
             'fecha_ingreso' => 'sometimes|required|date',
             'estado' => 'sometimes|required|in:Ingresado,Reparando,Reparado,Entregado'
@@ -29,6 +30,8 @@ class ReparacionRequest extends FormRequest
             'celular_id.exists' => 'El celular seleccionado no existe.',
             'cliente_id.required' => 'El cliente es obligatorio.',
             'cliente_id.exists' => 'El cliente seleccionado no existe.',
+            'usuario_id.required' => 'El técnico es obligatorio.',
+            'usuario_id.exists' => 'El técnico seleccionado no existe.',
             'descripcion_falla.required' => 'La descripción de la falla es obligatoria.',
             'descripcion_falla.string' => 'La descripción de la falla debe ser una cadena de texto.',
             'fecha_ingreso.required' => 'La fecha de ingreso es obligatoria.',
