@@ -7,7 +7,7 @@
         <p><strong>ID:</strong> {{ $reparacion->id }}</p>
         <p><strong>Cliente:</strong> {{ $reparacion->cliente->nombre ?? 'N/A' }}</p>
         <p><strong>Celular:</strong> {{ $reparacion->celular->modelo ?? 'N/A' }} ({{ $reparacion->celular->marca->nombre ?? 'N/A' }})</p>
-        <p><strong>Técnico:</strong> {{ $reparacion->usuario->nombre ?? 'N/A' }}</p>
+        {{ dd($reparacion->usuario_id) }}
         <p><strong>Descripción de Falla:</strong> {{ $reparacion->descripcion_falla }}</p>
         <p><strong>Estado:</strong> {{ $reparacion->estado }}</p>
         <p><strong>Fecha de Ingreso:</strong> {{ $reparacion->fecha_ingreso }}</p>
