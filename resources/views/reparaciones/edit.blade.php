@@ -48,10 +48,6 @@
             </select>
             <br><br>
 
-            <label>Descripción de Falla:</label><br>
-            <input type="text" name="descripcion_falla" value="{{ old('descripcion_falla', $reparacion->descripcion_falla) }}" required>
-            <br><br>
-
             <label>Estado:</label><br>
             <select name="estado" required>
                 <option value="Ingresado" {{ old('estado', $reparacion->estado) == 'Ingresado' ? 'selected' : '' }}>Ingresado</option>
@@ -59,6 +55,10 @@
                 <option value="Reparado" {{ old('estado', $reparacion->estado) == 'Reparado' ? 'selected' : '' }}>Reparado</option>
                 <option value="Entregado" {{ old('estado', $reparacion->estado) == 'Entregado' ? 'selected' : '' }}>Entregado</option>
             </select>
+            <br><br>
+
+            <label>Descripción de Falla:</label><br>
+            <input type="text" name="descripcion_falla" value="{{ old('descripcion_falla', $reparacion->descripcion_falla) }}" required>
             <br><br>
 
             <button type="submit">Actualizar</button>
