@@ -31,7 +31,7 @@
     <td>{{ $reparacion->celular->modelo }}</td>
     <td>{{ $reparacion->celular->marca->nombre }}</td>
     <td>{{ $reparacion->estado }}</td> 
-    <td>{{ $reparacion->usuario->name }}</td> 
+    <td>{{ $reparacion->usuario->nombre }}</td> 
     <td>{{ $reparacion->descripcion_falla }}</td>
 
     <td>
