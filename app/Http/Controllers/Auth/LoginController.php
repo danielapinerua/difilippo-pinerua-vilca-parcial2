@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Exceptions\InvalidCredentialsException;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -23,19 +25,31 @@ class LoginController extends Controller
             'email' => ['required', 'email'],
             'password' => ['required'],
         ]);
-        
-        if (Auth::attempt($credentials)) {            
-            $request->session()->regenerate();
-            return redirect()->route('reparaciones.index');
-        }
 
-        return back()
-        ->withErrors(['login' => 'Credenciales incorrectas'])
-        ->onlyInput('email');
+        try {
+            if (!Auth::attempt($credentials)) {            
+                throw new InvalidCredentialsException("Credenciales incorrectas, por favor, intenta de nuevo.", 401);
+            }
+
+            $request->session()->regenerate();
+
+            return redirect()->route('reparaciones.index');
+        } catch (InvalidCredentialsException $e) {
+            return back()
+                ->withErrors(['login' => $e->getMessage()])
+                ->onlyInput('email');
+        } catch (Exception $e) {
+            return back()
+                ->withErrors(['login' => 'Ocurrio un error inesperado, por favor intenta mas tarde.']);
+        }
     }
 
     public function logout(Request $request)
     {
+        if (!Auth::check()) {
+            return redirect()->route('login');
+        }
+
         Auth::logout();
 
         $request->session()->invalidate();
