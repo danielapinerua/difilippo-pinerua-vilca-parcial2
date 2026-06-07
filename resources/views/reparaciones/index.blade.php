@@ -5,7 +5,7 @@
 <section>
     <h2>Listado de Reparaciones</h2>
     <div>
-<p>Bienvenida, {{ auth()->user()->name }}</p>
+<p>Bienvenida, {{ auth()->user()->nombre }}</p>
 
 @if(session('success'))
 {{ session('success') }}
@@ -20,7 +20,6 @@
         <th>Marca</th>
         <th>Estado</th>
         <th>Técnico</th>
-        <th>Descripción</th>
         <th>Acciones</th>
     </tr>
 
@@ -32,7 +31,6 @@
     <td>{{ $reparacion->celular->marca->nombre }}</td>
     <td>{{ $reparacion->estado }}</td> 
     <td>{{ $reparacion->usuario->nombre }}</td> 
-    <td>{{ $reparacion->descripcion_falla }}</td>
 
     <td>
         <a href="{{ route('reparaciones.show', $reparacion->id) }}">Ver</a>
