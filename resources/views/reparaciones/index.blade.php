@@ -18,6 +18,7 @@
         <th>Cliente</th>
         <th>Celular</th>
         <th>Marca</th>
+        <th>Estado</th>
         <th>Técnico</th>
         <th>Acciones</th>
     </tr>
@@ -28,6 +29,7 @@
             <td>{{ $reparacion->cliente->nombre }}</td>
             <td>{{ $reparacion->celular->modelo }}</td>
             <td>{{ $reparacion->celular->marca->nombre }}</td>
+            <td>{{ $reparacion->estado }}</td>
             <td>{{ $reparacion->usuario->name }}</td>
 
             <td>

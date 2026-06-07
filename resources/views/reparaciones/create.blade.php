@@ -42,6 +42,15 @@
                 @endforeach
             </select>
             <br><br>
+            <label>Estado:</label><br>
+            <select name="estado">
+                <option value="">Seleccione estado</option>
+                <option value="Ingresado">Ingresado</option>
+                <option value="En reparación">En reparación</option>
+                <option value="Reparado">Reparado</option>
+                <option value="Entregado">Entregado</option>
+            </select>
+            <br><br>
             <label>Descripción:</label><br>
             <input type="text" name="descripcion_falla">
             <br><br>
