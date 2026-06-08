@@ -7,7 +7,6 @@
 <section class="reparacion-show">
     <h2>Detalle de Reparación</h2>
     <div class="card">
-        <p><strong>ID:</strong> {{ $reparacion->id }}</p>
         <p><strong>Cliente:</strong> {{ $reparacion->cliente->nombre ?? 'N/A' }}</p>
         <p><strong>Celular:</strong> {{ $reparacion->celular->modelo ?? 'N/A' }} ({{ $reparacion->celular->marca->nombre ?? 'N/A' }})</p>
         <p><strong>Técnico:</strong> {{ $reparacion->usuario->nombre ?? 'N/A' }}</p>
