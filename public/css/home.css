@@ -1,3 +1,9 @@
+/* Hero Section */
+.home-container-wrapper {
+    background-color: #0a0a0f;
+    width: 100%;
+}
+
 .home-container {
     min-height: 80vh;
     display: flex;
@@ -9,6 +15,7 @@
     max-width: 860px;
     margin: 0 auto;
     position: relative;
+    overflow: hidden;
 }
 
 .home-container h2 {
@@ -31,6 +38,11 @@
     max-width: 540px;
 }
 
+.home-container .auth-msg {
+    margin-top: 1rem;
+    color: #e2e8f0;
+}
+
 .home-container a {
     display: inline-block;
     color: #ffffff;
@@ -40,7 +52,7 @@
     border: 1px solid rgba(117, 150, 254, 0.6);
     font-size: 0.95rem;
     font-weight: 500;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
     backdrop-filter: blur(8px);
     background: rgba(117, 150, 254, 0.1);
     transition: background 0.2s ease, border-color 0.2s ease, transform 0.1s ease;
@@ -55,14 +67,31 @@
     transform: scale(0.97);
 }
 
-body:has(.home-container) main {
-    background-color: #0a0a0f;
-    max-width: 100%;
-    padding: 0;
+.scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgba(160, 168, 192, 0.7);
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    animation: bounce-scroll 1s infinite ease-in-out;
+    z-index: 10;
 }
 
-body:has(.home-container) {
-    background-color: #0a0a0f;
+@keyframes bounce-scroll {
+    0%, 100% {
+        transform: translateY(0);
+        opacity: 0.6;
+    }
+    50% {
+        transform: translateY(10px);
+        opacity: 1;
+    }
 }
 
 .home-container::before {
@@ -76,5 +105,186 @@ body:has(.home-container) {
     left: 50%;
     transform: translate(-50%, -50%);
     pointer-events: none;
-    z-index: -1;
+    z-index: 0;
+}
+
+.home-container h2, .home-container p, .home-container a, .home-container .auth-msg {
+    z-index: 1;
+    position: relative;
+}
+
+body:has(.home-container-wrapper) main {
+    max-width: 100%;
+    padding: 0;
+}
+
+
+/* Showcase */
+.home-index {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    min-height: 100vh;
+    padding: 5rem 2rem;
+    background-color: #0a0a0f;
+    background-image: 
+        radial-gradient(circle at 15% 50%, rgba(117, 150, 254, 0.08), transparent 25%),
+        radial-gradient(circle at 85% 30%, rgba(123, 73, 232, 0.08), transparent 25%),
+        radial-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 30px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.dashboard-showcase {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    padding: 2rem;
+    width: 100%;
+}
+
+.showcase-intro {
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+.showcase-intro h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    padding-bottom: 1rem;
+    background: linear-gradient(135deg, #ffffff 40%, #7596fe 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.showcase-intro p {
+    font-size: 1.1rem;
+    color: #a0a8c0;
+    line-height: 1.75;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.showcase-window {
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: #FFFFFF;
+    box-shadow: 
+        0 35px 70px rgba(0, 0, 0, 0.6),
+        0 15px 30px rgba(0, 0, 0, 0.4),
+        0 0 60px rgba(117, 150, 254, 0.25),
+        0 0 15px rgba(255, 255, 255, 0.08);
+    overflow: hidden;
+    position: relative;
+}
+
+.showcase-chrome {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 12px 16px;
+    background: #ECEEF2;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.chrome-dots {
+    display: flex;
+    gap: 6px;
+}
+
+.chrome-dots .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.chrome-dots .dot-red { background: #FF6058; }
+.chrome-dots .dot-yellow { background: #FFBD2E; }
+.chrome-dots .dot-green { background: #27CA40; }
+
+.chrome-url {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: #8B8FA3;
+    background: #FFFFFF;
+    padding: 5px 12px;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    flex: 1;
+    max-width: 300px;
+}
+
+.showcase-real-body {
+    padding: 24px 28px;
+    min-height: 500px;
+    background: #FFFFFF;
+}
+
+/* Floating Pills */
+.showcase-pill {
+    position: absolute;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 14px;
+    background: #FFFFFF;
+    border-radius: 30px;
+    box-shadow: 
+        0 25px 50px rgba(0, 0, 0, 0.136), 
+        0 0 40px rgba(117, 150, 254, 0.15), 
+        0 4px 15px rgba(0, 0, 0, 0.095);
+    font-size: 12px;
+    font-weight: 500;
+    color: #5F6474;
+    z-index: 10;
+    animation: float-anim 6s ease-in-out infinite;
+}
+
+.showcase-pill-1 {
+    top: 70px;
+    left: 20px;
+    animation-delay: 0s;
+}
+
+.showcase-pill-2 {
+    top: 70px;
+    right: 20px;
+    animation-delay: -2s;
+    color: #5858DB;
+}
+
+.showcase-pill-3 {
+    bottom: 30px;
+    right: 30px;
+    animation-delay: -4s;
+    color: #7B49E8;
+}
+
+.spill-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+}
+
+.spill-dot-live {
+    background: #10b981;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+    animation: pulse-dot 2s infinite;
+}
+
+/* Animations */
+@keyframes float-anim {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+@keyframes pulse-dot {
+    0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+    50% { opacity: 0.8; box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
 }
