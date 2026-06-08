@@ -1,0 +1,88 @@
+/* =============================================
+   show.css — Detalle de Cliente
+   ============================================= */
+
+.cliente-show {
+    max-width: 680px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.cliente-show h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #162446;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+}
+
+/* Tarjeta */
+.cliente-show .card {
+    background: #ffffff;
+    border-radius: 16px;
+    border: 1px solid #e0e4f0;
+    box-shadow: 0 4px 24px rgba(22, 36, 70, 0.07);
+    padding: 2rem 2.5rem;
+}
+
+/* Filas de info */
+.cliente-show .card p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.85rem 0;
+    border-bottom: 1px solid #f0f2f8;
+    font-size: 0.92rem;
+    color: #1d1d1f;
+    margin: 0;
+}
+
+.cliente-show .card p:last-of-type {
+    border-bottom: none;
+}
+
+.cliente-show .card p strong {
+    color: #415a9c;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    min-width: 160px;
+}
+
+/* Botón volver */
+.cliente-show .btn-volver {
+    display: inline-block;
+    margin-top: 1.5rem;
+    color: #415a9c;
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+    padding: 0.5rem 1.2rem;
+    border-radius: 20px;
+    border: 1px solid #d0d6ea;
+    transition: background 0.2s, color 0.2s;
+}
+
+.cliente-show .btn-volver:hover {
+    background: #162446;
+    color: #fff;
+    border-color: #162446;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .cliente-show .card {
+        padding: 1.5rem;
+    }
+
+    .cliente-show .card p {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.3rem;
+    }
+
+    .cliente-show .card p strong {
+        min-width: unset;
+    }
+}

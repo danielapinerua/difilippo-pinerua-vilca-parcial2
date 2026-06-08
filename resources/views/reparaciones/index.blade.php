@@ -1,58 +1,60 @@
 @extends('layouts.layout')
 @section('title', 'Reparaciones')
 
+@push('styles') <link rel="stylesheet" href="{{ asset('css/reparacion/index_reparaciones.css') }}"> @endpush
+
 @section('content')
-<section>
+<section class="reparaciones-index">
     <h2>Listado de Reparaciones</h2>
-    <div>
-<p>Bienvenida, {{ auth()->user()->nombre }}</p>
+    <p class="bienvenida">Bienvenida, {{ auth()->user()->nombre }}</p>
 
-@if(session('success'))
-{{ session('success') }}
-@endif
+    @if(session('success'))
+        <div class="success-msg">{{ session('success') }}</div>
+    @endif
 
-@if($reparaciones->count() > 0)
-<table border="1" cellpadding="10">
-    <tr>
-        <th>ID</th>
-        <th>Cliente</th>
-        <th>Celular</th>
-        <th>Marca</th>
-        <th>Estado</th>
-        <th>Técnico</th>
-        <th>Acciones</th>
-    </tr>
-
-    @foreach($reparaciones as $reparacion)
-    <tr>
-    <td>{{ $reparacion->id }}</td>
-    <td>{{ $reparacion->cliente->nombre }}</td>
-    <td>{{ $reparacion->celular->modelo }}</td>
-    <td>{{ $reparacion->celular->marca->nombre }}</td>
-    <td>{{ $reparacion->estado }}</td> 
-    <td>{{ $reparacion->usuario->nombre }}</td> 
-
-    <td>
-        <a href="{{ route('reparaciones.show', $reparacion->id) }}">Ver</a>
-        <a href="{{ route('reparaciones.edit', $reparacion->id) }}">Editar</a>
-
-        <form action="{{ route('reparaciones.destroy', $reparacion->id) }}" method="POST" style="display:inline;">
-            @csrf
-            @method('DELETE')
-            <button type="submit">Eliminar</button>
-        </form>
-    </td>
-</tr>
-    @endforeach
-
-</table>
-@else
-No hay reparaciones cargadas.
-@endif
-
-<a href="{{ route('reparaciones.create') }}">Nueva reparación</a>
-
-<br>
+    @if($reparaciones->count() > 0)
+    <div class="table-wrapper">
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Cliente</th>
+                <th>Celular</th>
+                <th>Marca</th>
+                <th>Estado</th>
+                <th>Técnico</th>
+                <th>Acciones</th>
+            </tr>
+            @foreach($reparaciones as $reparacion)
+            <tr>
+                <td>{{ $reparacion->id }}</td>
+                <td>{{ $reparacion->cliente->nombre }}</td>
+                <td>{{ $reparacion->celular->modelo }}</td>
+                <td>{{ $reparacion->celular->marca->nombre }}</td>
+                <td>
+                    <span class="estado estado-{{ strtolower($reparacion->estado) }}">
+                        {{ $reparacion->estado }}
+                    </span>
+                </td>
+                <td>{{ $reparacion->usuario->nombre }}</td>
+                <td>
+                    <div class="acciones">
+                        <a href="{{ route('reparaciones.show', $reparacion->id) }}">Ver</a>
+                        <a href="{{ route('reparaciones.edit', $reparacion->id) }}">Editar</a>
+                        <form action="{{ route('reparaciones.destroy', $reparacion->id) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit">Eliminar</button>
+                        </form>
+                    </div>
+                </td>
+            </tr>
+            @endforeach
+        </table>
     </div>
+    @else
+        <div class="empty">No hay reparaciones cargadas.</div>
+    @endif
+
+    <a href="{{ route('reparaciones.create') }}" class="btn-nueva">+ Nueva reparación</a>
 </section>
 @endsection

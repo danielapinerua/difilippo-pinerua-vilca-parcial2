@@ -1,24 +1,28 @@
 @extends('layouts.layout')
 @section('title', 'Nuevo Cliente')
+
+@push('styles') <link rel="stylesheet" href="{{ asset('css/clientes/create.css') }}"> @endpush
+
 @section('content')
-<section>
+<section class="cliente-create">
     <h2>Nuevo Cliente</h2>
     <div>
         @if ($errors->any())
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
+        <div class="error-list">
+            @foreach ($errors->all() as $error)
+                {{ $error }}<br>
+            @endforeach
+        </div>
         @endif
+
         <form action="{{ route('clientes.store') }}" method="POST">
             @csrf
-            <label>Nombre:</label><br>
+            <label>Nombre:</label>
             <input type="text" name="nombre" value="{{ old('nombre') }}" required>
-            <br><br>
-            <label>Teléfono:</label><br>
+
+            <label>Teléfono:</label>
             <input type="text" name="telefono" value="{{ old('telefono') }}">
-            <br><br>
+
             <button type="submit">Guardar</button>
         </form>
     </div>

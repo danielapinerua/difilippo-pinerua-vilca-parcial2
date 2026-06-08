@@ -1,0 +1,192 @@
+/* =============================================
+   index.css — Listado de Reparaciones
+   ============================================= */
+
+.reparaciones-index {
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Encabezado de sección */
+.reparaciones-index h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #162446;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+}
+
+.reparaciones-index .bienvenida {
+    color: #6e6e73;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Mensaje de éxito */
+.reparaciones-index .success-msg {
+    background: rgba(34, 197, 94, 0.1);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    border-radius: 10px;
+    padding: 0.75rem 1rem;
+    color: #166534;
+    font-size: 0.88rem;
+    margin-bottom: 1.2rem;
+}
+
+/* Contenedor tabla */
+.reparaciones-index .table-wrapper {
+    background: #ffffff;
+    border-radius: 16px;
+    border: 1px solid #e0e4f0;
+    box-shadow: 0 4px 24px rgba(22, 36, 70, 0.07);
+    overflow-x: auto;
+    margin-bottom: 1.5rem;
+}
+
+/* Tabla */
+.reparaciones-index table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    border: none;
+}
+
+.reparaciones-index table th {
+    background: #162446;
+    color: #b1d9ff;
+    font-weight: 600;
+    font-size: 0.78rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 0.9rem 1.2rem;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.reparaciones-index table td {
+    padding: 0.85rem 1.2rem;
+    color: #1d1d1f;
+    border-bottom: 1px solid #f0f2f8;
+    vertical-align: middle;
+}
+
+.reparaciones-index table tr:last-child td {
+    border-bottom: none;
+}
+
+.reparaciones-index table tr:hover td {
+    background: #f8f9fc;
+}
+
+/* Badge de estado */
+.reparaciones-index .estado {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.estado-ingresado  { background: #dbeafe; color: #1e40af; }
+.estado-reparando  { background: #fef9c3; color: #854d0e; }
+.estado-reparado   { background: #dcfce7; color: #166534; }
+.estado-entregado  { background: #f0fdf4; color: #15803d; }
+
+/* Acciones */
+.reparaciones-index .acciones {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.reparaciones-index .acciones a {
+    color: #415a9c;
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 500;
+    padding: 0.3rem 0.8rem;
+    border-radius: 8px;
+    border: 1px solid #d0d6ea;
+    transition: background 0.2s, color 0.2s;
+    white-space: nowrap;
+}
+
+.reparaciones-index .acciones a:hover {
+    background: #415a9c;
+    color: #fff;
+    border-color: #415a9c;
+}
+
+.reparaciones-index .acciones form button {
+    background: transparent;
+    color: #dc2626;
+    border: 1px solid #fca5a5;
+    padding: 0.3rem 0.8rem;
+    border-radius: 8px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background 0.2s, color 0.2s;
+    white-space: nowrap;
+}
+
+.reparaciones-index .acciones form button:hover {
+    background: #dc2626;
+    color: #fff;
+    border-color: #dc2626;
+}
+
+/* Sin reparaciones */
+.reparaciones-index .empty {
+    text-align: center;
+    padding: 3rem;
+    color: #6e6e73;
+    font-size: 0.95rem;
+    background: #fff;
+    border-radius: 16px;
+    border: 1px solid #e0e4f0;
+    margin-bottom: 1.5rem;
+}
+
+/* Botón nueva reparación */
+.reparaciones-index .btn-nueva {
+    display: inline-block;
+    background: linear-gradient(135deg, #162446, #415a9c);
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0.7rem 1.8rem;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: opacity 0.2s, transform 0.1s;
+}
+
+.reparaciones-index .btn-nueva:hover {
+    opacity: 0.88;
+}
+
+.reparaciones-index .btn-nueva:active {
+    transform: scale(0.97);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .reparaciones-index h2 {
+        font-size: 1.4rem;
+    }
+
+    .reparaciones-index table th,
+    .reparaciones-index table td {
+        padding: 0.7rem 0.8rem;
+        font-size: 0.82rem;
+    }
+
+    .reparaciones-index .acciones {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

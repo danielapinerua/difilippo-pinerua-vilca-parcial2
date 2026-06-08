@@ -1,0 +1,141 @@
+/* =============================================
+   index.css — Listado de Clientes
+   ============================================= */
+
+.clientes-index {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.clientes-index h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #162446;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+}
+
+/* Botón nuevo cliente */
+.clientes-index .btn-nueva {
+    display: inline-block;
+    background: linear-gradient(135deg, #162446, #415a9c);
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0.7rem 1.8rem;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    transition: opacity 0.2s, transform 0.1s;
+}
+
+.clientes-index .btn-nueva:hover {
+    opacity: 0.88;
+}
+
+.clientes-index .btn-nueva:active {
+    transform: scale(0.97);
+}
+
+/* Lista */
+.clientes-index ul {
+    list-style: none;
+    background: #ffffff;
+    border-radius: 16px;
+    border: 1px solid #e0e4f0;
+    box-shadow: 0 4px 24px rgba(22, 36, 70, 0.07);
+    overflow: hidden;
+    padding: 0;
+}
+
+.clientes-index ul li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.9rem 1.5rem;
+    border-bottom: 1px solid #f0f2f8;
+    font-size: 0.92rem;
+    color: #1d1d1f;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.clientes-index ul li:last-child {
+    border-bottom: none;
+}
+
+.clientes-index ul li:hover {
+    background: #f8f9fc;
+}
+
+/* Info del cliente */
+.clientes-index .cliente-info {
+    flex: 1;
+    min-width: 150px;
+}
+
+.clientes-index .cliente-info span {
+    font-weight: 600;
+    color: #162446;
+}
+
+.clientes-index .cliente-info small {
+    color: #6e6e73;
+    font-size: 0.82rem;
+    margin-left: 0.5rem;
+}
+
+/* Acciones */
+.clientes-index .acciones {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.clientes-index .acciones a {
+    color: #415a9c;
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 500;
+    padding: 0.3rem 0.8rem;
+    border-radius: 8px;
+    border: 1px solid #d0d6ea;
+    transition: background 0.2s, color 0.2s;
+    white-space: nowrap;
+}
+
+.clientes-index .acciones a:hover {
+    background: #415a9c;
+    color: #fff;
+    border-color: #415a9c;
+}
+
+.clientes-index .acciones form button {
+    background: transparent;
+    color: #dc2626;
+    border: 1px solid #fca5a5;
+    padding: 0.3rem 0.8rem;
+    border-radius: 8px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background 0.2s, color 0.2s;
+    white-space: nowrap;
+}
+
+.clientes-index .acciones form button:hover {
+    background: #dc2626;
+    color: #fff;
+    border-color: #dc2626;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .clientes-index ul li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

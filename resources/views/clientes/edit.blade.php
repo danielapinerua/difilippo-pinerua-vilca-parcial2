@@ -1,25 +1,30 @@
 @extends('layouts.layout')
 @section('title', 'Editar Cliente')
+
+@push('styles') <link rel="stylesheet" href="{{ asset('css/clientes/edit.css') }}"> @endpush
+
 @section('content')
-<section>
+<section class="cliente-edit">
     <h2>Editar Cliente</h2>
     <div>
         @if ($errors->any())
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
+        <div class="error-list">
+            @foreach ($errors->all() as $error)
+                {{ $error }}<br>
+            @endforeach
+        </div>
         @endif
+
         <form action="{{ route('clientes.update', $cliente->id) }}" method="POST">
             @csrf
             @method('PUT')
-            <label>Nombre:</label><br>
+
+            <label>Nombre:</label>
             <input type="text" name="nombre" value="{{ old('nombre', $cliente->nombre) }}" required>
-            <br><br>
-            <label>Teléfono:</label><br>
+
+            <label>Teléfono:</label>
             <input type="text" name="telefono" value="{{ old('telefono', $cliente->telefono) }}">
-            <br><br>
+
             <button type="submit">Actualizar</button>
         </form>
     </div>
