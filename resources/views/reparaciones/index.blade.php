@@ -6,7 +6,7 @@
 @section('content')
 <section class="reparaciones-index">
     <h2>Listado de Reparaciones</h2>
-    <p class="bienvenida">Bienvenida, {{ auth()->user()->nombre }}</p>
+    <p class="bienvenida">Bienvenido, {{ auth()->user()->nombre }}</p>
 
     @if(session('success'))
         <div class="success-msg">{{ session('success') }}</div>
@@ -16,7 +16,6 @@
     <div class="table-wrapper">
         <table>
             <tr>
-                <th>ID</th>
                 <th>Cliente</th>
                 <th>Celular</th>
                 <th>Marca</th>
@@ -26,7 +25,6 @@
             </tr>
             @foreach($reparaciones as $reparacion)
             <tr>
-                <td>{{ $reparacion->id }}</td>
                 <td>{{ $reparacion->cliente->nombre }}</td>
                 <td>{{ $reparacion->celular->modelo }}</td>
                 <td>{{ $reparacion->celular->marca->nombre }}</td>
