@@ -9,7 +9,7 @@
 <body>
 
     <header>
-        <h1>Mi Sistema</h1>
+        <h1>Servicio Técnico</h1>
         
         <nav>
             <a href="{{ route('home') }}">Inicio</a> |
