@@ -7,7 +7,6 @@
 <section class="celular-show">
     <h2>Detalle de Celular</h2>
     <div class="card">
-        <p><strong>ID:</strong> {{ $celular->id }}</p>
         <p><strong>Marca:</strong> {{ $celular->marca->nombre ?? 'Sin Marca' }}</p>
         <p><strong>Modelo:</strong> {{ $celular->modelo }}</p>
     </div>

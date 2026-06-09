@@ -14,10 +14,6 @@
     <div class="card shadow-sm border-0 rounded-4 p-4">
         <ul class="list-group list-group-flush rounded-4">
             <li class="list-group-item d-flex justify-content-between py-3 px-0">
-                <span class="field-label">ID</span>
-                <span>{{ $marca->id }}</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between py-3 px-0">
                 <span class="field-label">Nombre</span>
                 <span>{{ $marca->nombre }}</span>
             </li>
