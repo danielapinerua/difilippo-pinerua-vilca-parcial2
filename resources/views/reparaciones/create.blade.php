@@ -1,5 +1,5 @@
 @extends('layouts.layout')
-@section('title', 'Nueva ReparaciÃ³n')
+@section('title', 'Nueva Reparación')
 
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/reparacion/create.css') }}">
@@ -8,7 +8,7 @@
 @section('content')
 
 <section class="reparacion-create">
-    <h2>Nueva ReparaciÃ³n</h2>
+    <h2>Nueva Reparación</h2>
     <div>
         @if ($errors->any())
         <div class="error-list">
