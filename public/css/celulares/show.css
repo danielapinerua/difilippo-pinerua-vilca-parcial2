@@ -1,5 +1,5 @@
 /* =============================================
-   show.css — Detalle de Celular
+   show.css â€” Detalle de Celular
    ============================================= */
 
 .celular-show {
@@ -50,7 +50,6 @@
     min-width: 160px;
 }
 
-/* Botón volver */
 .celular-show .btn-volver {
     display: inline-block;
     margin-top: 1.5rem;

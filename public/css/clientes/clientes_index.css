@@ -1,5 +1,5 @@
 /* =============================================
-   index.css — Listado de Clientes
+   index.css â€” Listado de Clientes
    ============================================= */
 
 .clientes-index {
@@ -14,31 +14,7 @@
     color: #162446;
     letter-spacing: -0.02em;
     margin-bottom: 1.5rem;
-}
-
-/* Botón nuevo cliente */
-.clientes-index .btn-nueva {
-    display: inline-block;
-    background: linear-gradient(135deg, #162446, #415a9c);
-    color: #ffffff;
-    text-decoration: none;
-    padding: 0.7rem 1.8rem;
-    border-radius: 30px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-    transition: opacity 0.2s, transform 0.1s;
-}
-
-.clientes-index .btn-nueva:hover {
-    opacity: 0.88;
-}
-
-.clientes-index .btn-nueva:active {
-    transform: scale(0.97);
-}
-
-/* Lista */
+}/* Lista */
 .clientes-index ul {
     list-style: none;
     background: #ffffff;
@@ -84,55 +60,7 @@
     color: #6e6e73;
     font-size: 0.82rem;
     margin-left: 0.5rem;
-}
-
-/* Acciones */
-.clientes-index .acciones {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-}
-
-.clientes-index .acciones a {
-    color: #415a9c;
-    text-decoration: none;
-    font-size: 0.82rem;
-    font-weight: 500;
-    padding: 0.3rem 0.8rem;
-    border-radius: 8px;
-    border: 1px solid #d0d6ea;
-    transition: background 0.2s, color 0.2s;
-    white-space: nowrap;
-}
-
-.clientes-index .acciones a:hover {
-    background: #415a9c;
-    color: #fff;
-    border-color: #415a9c;
-}
-
-.clientes-index .acciones form button {
-    background: transparent;
-    color: #dc2626;
-    border: 1px solid #fca5a5;
-    padding: 0.3rem 0.8rem;
-    border-radius: 8px;
-    font-size: 0.82rem;
-    font-weight: 500;
-    cursor: pointer;
-    font-family: inherit;
-    transition: background 0.2s, color 0.2s;
-    white-space: nowrap;
-}
-
-.clientes-index .acciones form button:hover {
-    background: #dc2626;
-    color: #fff;
-    border-color: #dc2626;
-}
-
-/* Responsive */
+}/* Responsive */
 @media (max-width: 600px) {
     .clientes-index ul li {
         flex-direction: column;

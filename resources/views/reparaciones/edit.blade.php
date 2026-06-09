@@ -1,11 +1,11 @@
 @extends('layouts.layout')
-@section('title', 'Editar Reparación')
+@section('title', 'Editar ReparaciÃ³n')
 
 @push('styles') <link rel="stylesheet" href="{{ asset('css/reparacion/create.css') }}"> @endpush
 
 @section('content')
 <section class="reparacion-create">
-    <h2>Editar Reparación</h2>
+    <h2>Editar ReparaciÃ³n</h2>
     <div>
         @if ($errors->any())
         <div class="error-list">
@@ -60,7 +60,7 @@
             <label>Descripción de Falla:</label>
             <input type="text" name="descripcion_falla" value="{{ old('descripcion_falla', $reparacion->descripcion_falla) }}" required>
 
-            <button type="submit">Actualizar</button>
+            <button type="submit" class="btn-guardar">Actualizar</button>
         </form>
     </div>
 </section>

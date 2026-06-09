@@ -30,7 +30,7 @@
             <label>Modelo:</label>
             <input type="text" name="modelo" value="{{ old('modelo') }}" required>
 
-            <button type="submit">Guardar</button>
+            <button type="submit" class="btn-guardar">Guardar</button>
         </form>
     </div>
 </section>

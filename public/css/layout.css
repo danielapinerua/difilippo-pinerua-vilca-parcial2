@@ -1,5 +1,5 @@
 /* =============================================
-   layout.css — Estilo moderno minimalista
+   layout.css â€” Estilo moderno minimalista
    ============================================= */
 
 :root {
@@ -29,7 +29,7 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* ── Navbar Bootstrap ── */
+/* â”€â”€ Navbar Bootstrap â”€â”€ */
 .navbar {
     background-color: var(--blanco);
     border-bottom: 1px solid var(--gris-borde);
@@ -83,8 +83,7 @@ body {
     box-shadow: none;
 }
 
-/* Botón salir */
-.btn-logout {
+#btn-logout {
     display: flex;
     align-items: center;
     gap: 0.4rem;
@@ -100,17 +99,16 @@ body {
     transition: all 0.2s ease;
 }
 
-.btn-logout:hover {
+#btn-logout:hover {
     background-color: #fee2e2;
     color: #dc2626;
     border-color: #fca5a5;
 }
 
-.btn-logout:active {
+#btn-logout:active {
     transform: scale(0.97);
 }
 
-/* Botón login */
 .btn-login {
     display: inline-flex;
     align-items: center;
@@ -133,19 +131,19 @@ body {
     transform: scale(0.97);
 }
 
-/* ── Hr ── */
+/* â”€â”€ Hr â”€â”€ */
 hr {
     display: none;
 }
 
-/* ── Main ── */
+/* â”€â”€ Main â”€â”€ */
 main {
     flex: 1;
     padding: 2.5rem 0;
     width: 100%;
 }
 
-/* ── Footer ── */
+/* â”€â”€ Footer â”€â”€ */
 footer {
     background-color: var(--blanco);
     border-top: 1px solid var(--gris-borde);

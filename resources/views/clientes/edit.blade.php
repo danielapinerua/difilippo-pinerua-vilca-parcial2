@@ -25,7 +25,7 @@
             <label>Teléfono:</label>
             <input type="text" name="telefono" value="{{ old('telefono', $cliente->telefono) }}">
 
-            <button type="submit">Actualizar</button>
+            <button type="submit" class="btn-guardar">Actualizar</button>
         </form>
     </div>
 </section>

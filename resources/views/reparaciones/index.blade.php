@@ -12,6 +12,8 @@
         <div class="success-msg">{{ session('success') }}</div>
     @endif
 
+    <a href="{{ route('reparaciones.create') }}" class="btn-nueva">+ Nueva reparación</a>
+
     @if($reparaciones->count() > 0)
     <div class="table-wrapper">
         <table>
@@ -52,7 +54,5 @@
     @else
         <div class="empty">No hay reparaciones cargadas.</div>
     @endif
-
-    <a href="{{ route('reparaciones.create') }}" class="btn-nueva">+ Nueva reparación</a>
 </section>
 @endsection

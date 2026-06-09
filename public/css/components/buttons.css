@@ -1,0 +1,95 @@
+/* =============================================
+   buttons.css — Estilos globales de botones
+   ============================================= */
+
+/* Botón Principal (Azul) */
+.btn-nueva, .btn-guardar {
+    display: inline-block;
+    width: 100%;
+    padding: 0.8rem;
+    background: linear-gradient(135deg, #162446, #415a9c);
+    color: #ffffff;
+    border: none;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    font-family: inherit;
+    letter-spacing: 0.02em;
+    transition: opacity 0.2s ease, transform 0.1s ease;
+    text-align: center;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+.btn-nueva:hover, .btn-guardar:hover {
+    opacity: 0.88;
+    color: #ffffff;
+}
+
+.btn-nueva:active, .btn-guardar:active {
+    transform: scale(0.98);
+}
+
+/* Modificadores para btn-nueva (ancho automático cuando sea link) */
+a.btn-nueva {
+    width: auto;
+    padding: 0.7rem 1.8rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+/* Excepciones donde no queremos que afecte al submit (por ejemplo, dentro de .acciones) */
+.acciones form button[type="submit"] {
+    width: auto;
+    margin-top: 0;
+}
+
+/* Acciones (Ver, Editar, Eliminar) */
+.acciones {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.acciones a {
+    color: #415a9c;
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 500;
+    padding: 0.3rem 0.8rem;
+    border-radius: 8px;
+    border: 1px solid #d0d6ea;
+    transition: background 0.2s, color 0.2s;
+    white-space: nowrap;
+}
+
+.acciones a:hover {
+    background: #415a9c;
+    color: #fff;
+    border-color: #415a9c;
+}
+
+.acciones form button {
+    background: transparent;
+    color: #dc2626;
+    border: 1px solid #fca5a5;
+    padding: 0.3rem 0.8rem;
+    border-radius: 8px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background 0.2s, color 0.2s;
+    white-space: nowrap;
+    margin-top: 0;
+    width: auto;
+}
+
+.acciones form button:hover {
+    background: #dc2626;
+    color: #fff;
+    border-color: #dc2626;
+}

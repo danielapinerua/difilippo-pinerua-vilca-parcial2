@@ -1,11 +1,11 @@
 /* =============================================
-   index.css — Listado de Marcas (Bootstrap)
+   marcas_index.css — Listado de Marcas
    ============================================= */
 
 .marcas-index {
-    padding: 2rem 1rem;
-    max-width: 860px;
-    margin: 0 auto;
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
 }
 
 .marcas-index h2 {
@@ -13,22 +13,66 @@
     font-weight: 700;
     color: #162446;
     letter-spacing: -0.02em;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
 }
 
-.marcas-index .marca-nombre {
+/* Lista */
+.marcas-index ul {
+    list-style: none;
+    background: #ffffff;
+    border-radius: 16px;
+    border: 1px solid #e0e4f0;
+    box-shadow: 0 4px 24px rgba(22, 36, 70, 0.07);
+    overflow: hidden;
+    padding: 0;
+}
+
+.marcas-index ul li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.9rem 1.5rem;
+    border-bottom: 1px solid #f0f2f8;
+    font-size: 0.92rem;
+    color: #1d1d1f;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.marcas-index ul li:last-child {
+    border-bottom: none;
+}
+
+.marcas-index ul li:hover {
+    background: #f8f9fc;
+}
+
+/* Info de la marca */
+.marcas-index .marca-info {
+    flex: 1;
+    min-width: 150px;
+}
+
+.marcas-index .marca-info span {
     font-weight: 600;
     color: #162446;
-    font-size: 1rem;
 }
 
-.marcas-index .btn-eliminar {
-    color: #dc2626;
-    border-color: #fca5a5;
+.marcas-index .empty {
+    text-align: center;
+    padding: 3rem;
+    color: #6e6e73;
+    font-size: 0.95rem;
+    background: #fff;
+    border-radius: 16px;
+    border: 1px solid #e0e4f0;
+    margin-bottom: 1.5rem;
 }
 
-.marcas-index .btn-eliminar:hover {
-    background: #dc2626;
-    color: #fff;
-    border-color: #dc2626;
+/* Responsive */
+@media (max-width: 600px) {
+    .marcas-index ul li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }

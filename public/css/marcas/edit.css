@@ -1,11 +1,11 @@
 /* =============================================
-   edit.css — Editar Marca (Bootstrap)
+   edit.css — Editar Marca
    ============================================= */
 
 .marcas-edit {
-    padding: 2rem 1rem;
     max-width: 560px;
-    margin: 0 auto;
+    margin: 2rem auto;
+    padding: 0 1rem;
 }
 
 .marcas-edit h2 {
@@ -13,26 +13,65 @@
     font-weight: 700;
     color: #162446;
     letter-spacing: -0.02em;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
 }
 
-.marcas-edit .form-label {
+/* Tarjeta */
+.marcas-edit div {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 2rem 2.5rem;
+    border: 1px solid #e0e4f0;
+    box-shadow: 0 4px 24px rgba(22, 36, 70, 0.07);
+}
+
+/* Errores */
+.marcas-edit .error-list {
+    background: rgba(255, 80, 80, 0.08);
+    border: 1px solid rgba(255, 80, 80, 0.3);
+    border-radius: 10px;
+    padding: 0.8rem 1rem;
+    margin-bottom: 1.5rem;
+    color: #cc3333;
+    font-size: 0.85rem;
+    line-height: 1.7;
+}
+
+/* Labels */
+.marcas-edit label {
+    display: block;
     font-size: 0.82rem;
     font-weight: 600;
     color: #415a9c;
     letter-spacing: 0.04em;
     text-transform: uppercase;
+    margin-bottom: 0.4rem;
 }
 
-.marcas-edit .form-control {
+/* Inputs */
+.marcas-edit input[type="text"] {
+    width: 100%;
+    padding: 0.65rem 1rem;
+    border: 1px solid #d0d6ea;
     border-radius: 10px;
-    border-color: #d0d6ea;
-    background-color: #f8f9fc;
     font-size: 0.92rem;
+    color: #1d1d1f;
+    background-color: #f8f9fc;
+    outline: none;
+    font-family: inherit;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    margin-bottom: 1.2rem;
 }
 
-.marcas-edit .form-control:focus {
+.marcas-edit input[type="text"]:focus {
     border-color: #7596fe;
     box-shadow: 0 0 0 3px rgba(117, 150, 254, 0.15);
     background-color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .marcas-edit div {
+        padding: 1.5rem;
+    }
 }

@@ -1,5 +1,5 @@
 /* =============================================
-   index.css — Listado de Celulares
+   celulares_index.css — Listado de Celulares
    ============================================= */
 
 .celulares-index {
@@ -16,116 +16,75 @@
     margin-bottom: 1.5rem;
 }
 
-/* Botón nuevo */
-.celulares-index .btn-nueva {
-    display: inline-block;
-    background: linear-gradient(135deg, #162446, #415a9c);
-    color: #ffffff;
-    text-decoration: none;
-    padding: 0.7rem 1.8rem;
-    border-radius: 30px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-    transition: opacity 0.2s, transform 0.1s;
-}
-
-.celulares-index .btn-nueva:hover { opacity: 0.88; }
-.celulares-index .btn-nueva:active { transform: scale(0.97); }
-
-/* Lista */
-.celulares-index ul {
-    list-style: none;
+.celulares-index .table-wrapper {
     background: #ffffff;
     border-radius: 16px;
     border: 1px solid #e0e4f0;
     box-shadow: 0 4px 24px rgba(22, 36, 70, 0.07);
     overflow: hidden;
-    padding: 0;
+    margin-bottom: 1.5rem;
 }
 
-.celulares-index ul li {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.9rem 1.5rem;
-    border-bottom: 1px solid #f0f2f8;
+.celulares-index table {
+    width: 100%;
+    border-collapse: collapse;
     font-size: 0.92rem;
-    color: #1d1d1f;
-    flex-wrap: wrap;
-    gap: 0.5rem;
 }
 
-.celulares-index ul li:last-child { border-bottom: none; }
-.celulares-index ul li:hover { background: #f8f9fc; }
-
-/* Info */
-.celulares-index .celular-info {
-    flex: 1;
-    min-width: 150px;
-}
-
-.celulares-index .celular-info span {
-    font-weight: 600;
+.celulares-index table th {
+    background: #f8f9fc;
     color: #162446;
+    font-weight: 600;
+    padding: 0.9rem 1.5rem;
+    text-align: left;
+    border-bottom: 1px solid #e0e4f0;
 }
 
-.celulares-index .celular-info small {
-    color: #6e6e73;
-    font-size: 0.82rem;
-    margin-left: 0.4rem;
+.celulares-index table td {
+    display: table-cell;
+    padding: 0.9rem 1.5rem;
+    color: #1d1d1f;
+    border-bottom: 1px solid #f0f2f8;
+    vertical-align: middle;
 }
 
-/* Acciones */
-.celulares-index .acciones {
+.celulares-index table .acciones {
     display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    flex-wrap: wrap;
+    justify-content: flex-end;
 }
 
-.celulares-index .acciones a {
-    color: #415a9c;
-    text-decoration: none;
-    font-size: 0.82rem;
-    font-weight: 500;
-    padding: 0.3rem 0.8rem;
-    border-radius: 8px;
-    border: 1px solid #d0d6ea;
-    transition: background 0.2s, color 0.2s;
-    white-space: nowrap;
+.celulares-index table tr:last-child td {
+    border-bottom: none;
 }
 
-.celulares-index .acciones a:hover {
-    background: #415a9c;
-    color: #fff;
-    border-color: #415a9c;
+.celulares-index table tr:hover td {
+    background: #f8f9fc;
 }
 
-.celulares-index .acciones form button {
-    background: transparent;
-    color: #dc2626;
-    border: 1px solid #fca5a5;
-    padding: 0.3rem 0.8rem;
-    border-radius: 8px;
-    font-size: 0.82rem;
-    font-weight: 500;
-    cursor: pointer;
-    font-family: inherit;
-    transition: background 0.2s, color 0.2s;
-    white-space: nowrap;
+.celulares-index .empty {
+    text-align: center;
+    padding: 3rem;
+    color: #6e6e73;
+    font-size: 0.95rem;
+    background: #fff;
+    border-radius: 16px;
+    border: 1px solid #e0e4f0;
+    margin-bottom: 1.5rem;
 }
 
-.celulares-index .acciones form button:hover {
-    background: #dc2626;
-    color: #fff;
-    border-color: #dc2626;
+.td-marca {
+    opacity: 0.7;
+}
+
+.th-actions {
+    display: flex;
+    justify-content: center;
 }
 
 /* Responsive */
 @media (max-width: 600px) {
-    .celulares-index ul li {
-        flex-direction: column;
-        align-items: flex-start;
+    .celulares-index table th,
+    .celulares-index table td {
+        padding: 0.7rem 0.8rem;
     }
 }

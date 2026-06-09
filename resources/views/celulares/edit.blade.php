@@ -32,7 +32,7 @@
             <label>Modelo:</label>
             <input type="text" name="modelo" value="{{ old('modelo', $celular->modelo) }}" required>
 
-            <button type="submit">Actualizar</button>
+            <button type="submit" class="btn-guardar">Actualizar</button>
         </form>
     </div>
 </section>
