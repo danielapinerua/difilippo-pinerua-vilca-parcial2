@@ -1,0 +1,38 @@
+/* =============================================
+   create.css — Nueva Marca (Bootstrap)
+   ============================================= */
+
+.marcas-create {
+    padding: 2rem 1rem;
+    max-width: 560px;
+    margin: 0 auto;
+}
+
+.marcas-create h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #162446;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+}
+
+.marcas-create .form-label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #415a9c;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.marcas-create .form-control {
+    border-radius: 10px;
+    border-color: #d0d6ea;
+    background-color: #f8f9fc;
+    font-size: 0.92rem;
+}
+
+.marcas-create .form-control:focus {
+    border-color: #7596fe;
+    box-shadow: 0 0 0 3px rgba(117, 150, 254, 0.15);
+    background-color: #fff;
+}

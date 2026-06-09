@@ -1,19 +1,23 @@
 @extends('layouts.layout')
 @section('title', 'Nuevo Celular')
+
+@push('styles') <link rel="stylesheet" href="{{ asset('css/celulares/create.css') }}"> @endpush
+
 @section('content')
-<section>
+<section class="celular-create">
     <h2>Nuevo Celular</h2>
     <div>
         @if ($errors->any())
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
+        <div class="error-list">
+            @foreach ($errors->all() as $error)
+                {{ $error }}<br>
+            @endforeach
+        </div>
         @endif
+
         <form action="{{ route('celulares.store') }}" method="POST">
             @csrf
-            <label>Marca:</label><br>
+            <label>Marca:</label>
             <select name="marca_id" required>
                 <option value="">Seleccione una marca</option>
                 @foreach($marcas as $marca)
@@ -22,10 +26,10 @@
                     </option>
                 @endforeach
             </select>
-            <br><br>
-            <label>Modelo:</label><br>
+
+            <label>Modelo:</label>
             <input type="text" name="modelo" value="{{ old('modelo') }}" required>
-            <br><br>
+
             <button type="submit">Guardar</button>
         </form>
     </div>
