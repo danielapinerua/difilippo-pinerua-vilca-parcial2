@@ -5,7 +5,7 @@
 
 @section('content')
 <section class="reparacion-create">
-    <h2>Editar ReparaciÃ³n</h2>
+    <h2>Editar Reparación</h2>
     <div>
         @if ($errors->any())
         <div class="error-list">

@@ -19,4 +19,4 @@
     </div>
     <a href="{{ route('reparaciones.index') }}" class="btn-volver">← Volver al listado</a>
 </section>
-@endsection
+@endsection  
