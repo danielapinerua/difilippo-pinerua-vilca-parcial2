@@ -76,6 +76,8 @@
                         <h2>Listado de Reparaciones</h2>
                         <p class="bienvenida">Bienvenido, Usuario Demo</p>
     
+                        <a href="javascript:void(0)" class="btn-nueva">+ Nueva reparación</a>
+                        
                         <div class="table-wrapper">
                             <table>
                                 <tr>
@@ -160,8 +162,6 @@
                                 </tr>
                             </table>
                         </div>
-    
-                        <a href="javascript:void(0)" class="btn-nueva">+ Nueva reparación</a>
                     </div>
                     
                 </div>
