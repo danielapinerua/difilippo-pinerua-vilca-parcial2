@@ -1,59 +1,360 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<div align="center">
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# 📱 Sistema de Reparación de Celulares
 
-## About Laravel
+> Aplicación web para gestionar reparaciones de dispositivos móviles, desarrollada con **Laravel** y **MySQL**.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+![Laravel](https://img.shields.io/badge/Laravel-10+-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
+![PHP](https://img.shields.io/badge/PHP-8.1+-777BB4?style=for-the-badge&logo=php&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+![Blade](https://img.shields.io/badge/Blade-Templates-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+</div>
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+## 📌 Tabla de Contenidos
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+- [Requisitos](#-requisitos)
+- [Instalación](#-instalación)
+- [Configuración del Entorno](#-configuración-del-entorno)
+- [Base de Datos](#-base-de-datos)
+- [Modelos](#-modelos)
+- [Controladores y Validaciones](#-controladores-y-validaciones)
+- [Seeders](#-seeders)
+- [Vistas](#-vistas-blade)
+- [Estilos CSS](#-estilos-css)
+- [Rutas](#-rutas)
+- [Autenticación](#-autenticación)
+- [Autores](#-autores)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-## Laravel Sponsors
+## ✅ Requisitos
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+| Tecnología | Versión mínima |
+|------------|---------------|
+| PHP        | 8.1+          |
+| Laravel    | 10+           |
+| MySQL      | 5.7+          |
+| Composer   | 2+            |
 
-### Premium Partners
+---
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+## 🚀 Instalación
 
-## Contributing
+```bash
+# 1. Clonar el repositorio
+git clone <url-del-repo>
+cd <nombre-del-proyecto>
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+# 2. Instalar dependencias
+composer install
 
-## Code of Conduct
+# 3. Copiar archivo de entorno
+cp .env.example .env
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+# 4. Generar clave de la aplicación
+php artisan key:generate
 
-## Security Vulnerabilities
+# 5. Ejecutar migraciones
+php artisan migrate
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+# 6. (Opcional) Cargar datos de prueba
+php artisan db:seed
 
-## License
+# 7. Levantar el servidor
+php artisan serve
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+---
+
+## 🔧 Configuración del Entorno
+
+Editá el archivo `.env` con los datos de tu base de datos:
+
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=reparacion_celulares
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+---
+
+## 🗄️ Base de Datos
+
+### Diagrama de relaciones
+
+```
+marcas ──────────── celulares ──────────── reparaciones
+                                                │
+clientes ───────────────────────────────────────┤
+                                                │
+usuarios ───────────────────────────────────────┘
+```
+
+### Tablas
+
+<details>
+<summary><b>📋 usuarios</b> — Técnicos del sistema</summary>
+
+| Campo      | Tipo   | Descripción            |
+|------------|--------|------------------------|
+| id         | bigint | Clave primaria         |
+| nombre     | string | Nombre del técnico     |
+| email      | string | Único                  |
+| password   | string | Hasheada               |
+| timestamps | —      | created_at, updated_at |
+
+</details>
+
+<details>
+<summary><b>👤 clientes</b> — Datos de los clientes</summary>
+
+| Campo      | Tipo   | Descripción            |
+|------------|--------|------------------------|
+| id         | bigint | Clave primaria         |
+| nombre     | string | Nombre del cliente     |
+| telefono   | string | Opcional               |
+| timestamps | —      | created_at, updated_at |
+
+</details>
+
+<details>
+<summary><b>🏷️ marcas</b> — Marcas de celulares</summary>
+
+| Campo      | Tipo   | Descripción            |
+|------------|--------|------------------------|
+| id         | bigint | Clave primaria         |
+| nombre     | string | Nombre de la marca     |
+| timestamps | —      | created_at, updated_at |
+
+</details>
+
+<details>
+<summary><b>📱 celulares</b> — Modelos de dispositivos</summary>
+
+| Campo      | Tipo   | Descripción            |
+|------------|--------|------------------------|
+| id         | bigint | Clave primaria         |
+| marca_id   | bigint | FK → marcas            |
+| modelo     | string | Nombre del modelo      |
+| timestamps | —      | created_at, updated_at |
+
+</details>
+
+<details>
+<summary><b>🔧 reparaciones</b> — Tabla principal</summary>
+
+| Campo             | Tipo   | Descripción                                          |
+|-------------------|--------|------------------------------------------------------|
+| id                | bigint | Clave primaria                                       |
+| descripcion_falla | text   | Detalle del problema                                 |
+| fecha_ingreso     | date   | Por defecto: fecha actual                            |
+| estado            | enum   | `Ingresado` · `Reparando` · `Reparado` · `Entregado` |
+| celular_id        | bigint | FK → celulares                                       |
+| cliente_id        | bigint | FK → clientes                                        |
+| usuario_id        | bigint | FK → usuarios                                        |
+| timestamps        | —      | created_at, updated_at                               |
+
+</details>
+
+### Flujo de estados
+
+```
+[ Ingresado ] ──► [ Reparando ] ──► [ Reparado ] ──► [ Entregado ]
+```
+
+---
+
+## 🧩 Modelos
+
+| Modelo     | Tabla        | Fillable                                                                      | Relaciones                          |
+|------------|--------------|-------------------------------------------------------------------------------|-------------------------------------|
+| Usuario    | usuarios     | nombre, email, password                                                       | hasMany Reparacion                  |
+| Cliente    | clientes     | nombre, telefono                                                              | hasMany Reparacion                  |
+| Marca      | marcas       | nombre                                                                        | hasMany Celular                     |
+| Celular    | celulares    | marca_id, modelo                                                              | belongsTo Marca · hasMany Reparacion|
+| Reparacion | reparaciones | descripcion_falla, fecha_ingreso, estado, celular_id, cliente_id, usuario_id | belongsTo Cliente, Celular, Usuario |
+
+---
+
+## 🎮 Controladores y Validaciones
+
+| Controlador          | Form Request(s)                           | Validaciones clave                                   |
+|----------------------|-------------------------------------------|------------------------------------------------------|
+| CelularController    | `CelularRequest`                          | marca_id existente · modelo obligatorio              |
+| ClienteController    | `StoreClienteRequest` `UpdateClienteRequest` | nombre único · teléfono opcional                  |
+| MarcaController      | `StoreMarcaRequest` `UpdateMarcaRequest`  | nombre obligatorio y único                           |
+| ReparacionController | `ReparacionRequest`                       | FKs existentes · estado válido · falla obligatoria   |
+| PageController       | —                                         | Vistas estáticas (home, about)                       |
+| LoginController      | —                                         | Credenciales · redirecciones · logout                |
+
+### 🔑 LoginController
+
+```
+showLoginForm  →  Muestra formulario / redirige si ya autenticado
+login          →  Valida credenciales → redirige a /reparaciones
+logout         →  Cierra sesión e invalida token
+```
+
+---
+
+## 🌱 Seeders
+
+```bash
+# Ejecutar seeders
+php artisan db:seed
+
+# Reiniciar BD con datos frescos
+php artisan migrate:fresh --seed
+```
+
+El `DatabaseSeeder` ejecuta en orden:
+
+```
+1. UsuarioSeeder   →  admin@test.com · juan@test.com
+2. ClienteSeeder   →  Carlos Perez · Ana Gomez · Luis Martinez
+3. MarcaSeeder     →  Samsung · Apple · Xiaomi · Motorola · Huawei · LG · Sony · Nokia
+4. CelularSeeder   →  Galaxy S21 · iPhone 13 · Redmi Note 10 · Moto G100
+5. ReparacionSeeder → Pantalla rota · Batería defectuosa · No enciende
+```
+
+---
+
+## 🖼️ Vistas (Blade)
+
+### Layout base
+
+`resources/views/layouts/layout.blade.php`
+
+Contiene navbar dinámico, footer y `@yield('content')`.
+
+| Estado de sesión | Acceso en navbar                              |
+|------------------|-----------------------------------------------|
+| ✅ Autenticado    | Reparaciones · Clientes · Celulares · Marcas  |
+| ❌ No autenticado | Inicio · Acerca de                            |
+
+### Módulos
+
+| Módulo       | Vistas                          |
+|--------------|---------------------------------|
+| Páginas      | `home` · `about`                |
+| Auth         | `login`                         |
+| Marcas       | `index` `create` `edit` `show`  |
+| Celulares    | `index` `create` `edit` `show`  |
+| Clientes     | `index` `create` `edit` `show`  |
+| Reparaciones | `index` `create` `edit` `show`  |
+
+> Todas las vistas usan `@csrf`, `@method`, y validación con `$errors`.
+
+---
+
+## 🎨 Estilos CSS
+
+```
+public/css/
+├── layout.css
+├── home.css
+├── about.css
+├── login.css
+│
+├── components/
+│   └── button.css          ← botones globales reutilizables
+│
+├── celulares/
+│   ├── celulares_index.css
+│   ├── create.css
+│   ├── edit.css
+│   └── show.css
+│
+├── clientes/
+│   ├── clientes_index.css
+│   ├── create.css
+│   ├── edit.css
+│   └── show.css
+│
+├── marcas/
+│   ├── marcas_index.css
+│   ├── create.css
+│   ├── edit.css
+│   └── show.css
+│
+└── reparacion/
+    ├── index_reparaciones.css   ← incluye colores por estado
+    ├── create.css
+    └── show.css
+```
+
+---
+
+## 🛣️ Rutas
+
+### Públicas
+
+| Método | URL      | Controlador     | Acción              |
+|--------|----------|-----------------|---------------------|
+| GET    | `/`      | PageController  | Página principal    |
+| GET    | `/about` | PageController  | Acerca de           |
+| GET    | `/login` | LoginController | Formulario de login |
+| POST   | `/login` | LoginController | Procesar login      |
+| POST   | `/logout`| LoginController | Cerrar sesión       |
+
+### Protegidas `middleware('auth')`
+
+| Recurso      | Prefijo URL     | Controlador           |
+|--------------|-----------------|-----------------------|
+| Reparaciones | `/reparaciones` | ReparacionController  |
+| Marcas       | `/marcas`       | MarcaController       |
+| Celulares    | `/celulares`    | CelularController     |
+| Clientes     | `/clientes`     | ClienteController     |
+
+> Cada recurso expone: `index` · `create` · `store` · `show` · `edit` · `update` · `destroy`
+
+---
+
+## 🔐 Autenticación
+
+El sistema reemplaza el modelo `User` de Laravel por un modelo propio `Usuario`. Configurado en `config/auth.php`:
+
+```php
+'providers' => [
+    'users' => [
+        'driver' => 'eloquent',
+        'model'  => env('AUTH_MODEL', Usuario::class),
+    ],
+],
+```
+
+---
+
+## 👥 Autores
+
+<div align="center">
+
+| 👤 Nombre                 |
+|---------------------------|
+| Gianluca Vilca            |
+| Daniela Piñerua           |
+| Marcos Jesus Di Filipo    |
+
+</div>
+
+---
+
+## 📝 Conclusión
+
+El sistema permite gestionar de manera eficiente el proceso de reparación de celulares, integrando clientes, dispositivos, marcas y reparaciones en una sola aplicación.
+
+A lo largo del desarrollo se aplicaron conceptos fundamentales de Laravel: migraciones, Eloquent ORM, controladores, Form Requests, vistas Blade y autenticación personalizada. El resultado es una aplicación funcional, escalable y fácil de mantener.
+
+---
+
+<div align="center">
+
+📄 Licencia MIT &nbsp;·&nbsp; Hecho con ❤️ y Laravel
+
+</div>
