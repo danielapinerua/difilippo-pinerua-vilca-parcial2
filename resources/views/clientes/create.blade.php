@@ -20,7 +20,7 @@
             <label>Nombre:</label>
             <input type="text" name="nombre" value="{{ old('nombre') }}" required>
 
-            <label>TelÃ©fono:</label>
+            <label>Teléfono:</label>
             <input type="text" name="telefono" value="{{ old('telefono') }}">
 
             <button type="submit" class="btn-guardar">Guardar</button>
