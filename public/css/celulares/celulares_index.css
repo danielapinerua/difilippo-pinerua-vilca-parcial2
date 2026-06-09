@@ -16,49 +16,55 @@
     margin-bottom: 1.5rem;
 }
 
-.celulares-index .table-wrapper {
+/* Lista */
+.celulares-index ul {
+    list-style: none;
     background: #ffffff;
     border-radius: 16px;
     border: 1px solid #e0e4f0;
     box-shadow: 0 4px 24px rgba(22, 36, 70, 0.07);
     overflow: hidden;
-    margin-bottom: 1.5rem;
+    padding: 0;
 }
 
-.celulares-index table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.92rem;
-}
-
-.celulares-index table th {
-    background: #f8f9fc;
-    color: #162446;
-    font-weight: 600;
-    padding: 0.9rem 1.5rem;
-    text-align: left;
-    border-bottom: 1px solid #e0e4f0;
-}
-
-.celulares-index table td {
-    display: table-cell;
-    padding: 0.9rem 1.5rem;
-    color: #1d1d1f;
-    border-bottom: 1px solid #f0f2f8;
-    vertical-align: middle;
-}
-
-.celulares-index table .acciones {
+.celulares-index ul li {
     display: flex;
-    justify-content: flex-end;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.9rem 1.5rem;
+    border-bottom: 1px solid #f0f2f8;
+    font-size: 0.92rem;
+    color: #1d1d1f;
+    flex-wrap: wrap;
+    gap: 0.5rem;
 }
 
-.celulares-index table tr:last-child td {
+.celulares-index ul li:last-child {
     border-bottom: none;
 }
 
-.celulares-index table tr:hover td {
+.celulares-index ul li:hover {
     background: #f8f9fc;
+}
+
+/* Info del celular */
+.celulares-index .celular-info {
+    flex: 1;
+    min-width: 150px;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.celulares-index .celular-info span {
+    font-weight: 600;
+    color: #162446;
+}
+
+.celulares-index .celular-marca {
+    color: #162446;
+    opacity: 0.7;
+    font-size: 0.88rem;
 }
 
 .celulares-index .empty {
@@ -72,19 +78,10 @@
     margin-bottom: 1.5rem;
 }
 
-.td-marca {
-    opacity: 0.7;
-}
-
-.th-actions {
-    display: flex;
-    justify-content: center;
-}
-
 /* Responsive */
 @media (max-width: 600px) {
-    .celulares-index table th,
-    .celulares-index table td {
-        padding: 0.7rem 0.8rem;
+    .celulares-index ul li {
+        flex-direction: column;
+        align-items: flex-start;
     }
 }
