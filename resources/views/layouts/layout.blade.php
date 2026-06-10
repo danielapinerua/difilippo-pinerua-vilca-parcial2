@@ -29,7 +29,7 @@
                         <li class="nav-item"><a class="nav-link" href="{{ route('marcas.index') }}">Marcas</a></li>
                     @else
                         <li class="nav-item"><a class="nav-link" href="{{ route('home') }}">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{ route('about') }}">Acerca de Nosotros</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('about') }}">Sobre Nosotros</a></li>
                     @endauth
                 </ul>
 

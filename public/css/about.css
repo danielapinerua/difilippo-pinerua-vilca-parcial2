@@ -1,24 +1,155 @@
-.about-container {
-    max-width: 750px;
+/* About Page - Home Matching Style */
+
+body:has(.about-page-wrapper) {
+    overflow-x: hidden;
+}
+
+body:has(.about-page-wrapper) main {
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.about-page-wrapper {
+    /* Same dark background as home */
+    background-color: #0a0a0f;
+    background-image: 
+        radial-gradient(circle at 15% 50%, rgba(117, 150, 254, 0.08), transparent 25%),
+        radial-gradient(circle at 85% 30%, rgba(123, 73, 232, 0.08), transparent 25%),
+        radial-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 30px 30px;
+    
+    min-height: calc(100vh - 80px); /* Adjust based on navbar height roughly */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6rem 2rem;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    
+    /* Clean full width without vw hacks */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.about-content {
+    max-width: 1100px;
+    width: 100%;
     margin: 0 auto;
 }
 
-.about-container h2 {
-    font-size: 2rem;
+.about-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.about-h2 {
+    font-size: 3.5rem; /* Copied exactly from home.css */
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin: 0;
+    background: linear-gradient(135deg, #ffffff 40%, #7596fe 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Symmetrical Grid for the Pastillas */
+.mac-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+}
+
+@media (max-width: 900px) {
+    .mac-grid {
+        grid-template-columns: 1fr;
+    }
+    .about-h2 {
+        font-size: 2.8rem;
+    }
+    .about-page-wrapper {
+        padding: 4rem 1.5rem;
+    }
+}
+
+/* Mac Window Styles (White Light Mode like Home) */
+.mac-window {
+    border-radius: 24px; /* Updated to match home */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: #FFFFFF; /* White background matching home */
+    box-shadow: 
+        0 25px 50px rgba(0, 0, 0, 0.4),
+        0 15px 30px rgba(0, 0, 0, 0.2),
+        0 0 40px rgba(117, 150, 254, 0.15);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mac-window:hover {
+    transform: translateY(-8px);
+    box-shadow: 
+        0 35px 70px rgba(0, 0, 0, 0.6),
+        0 15px 30px rgba(0, 0, 0, 0.4),
+        0 0 60px rgba(117, 150, 254, 0.25),
+        0 0 15px rgba(255, 255, 255, 0.08);
+}
+
+.mac-chrome {
+    display: flex;
+    align-items: center;
+    padding: 14px 18px;
+    background: #ECEEF2; /* Light grey chrome matching home */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    position: relative;
+}
+
+.mac-dots {
+    display: flex;
+    gap: 8px;
+    position: absolute;
+    left: 18px;
+}
+
+.mac-dots .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.dot-red { background: #FF6058; }
+.dot-yellow { background: #FFBD2E; }
+.dot-green { background: #27CA40; }
+
+.mac-title {
+    width: 100%;
+    text-align: center;
+    font-size: 0.85rem;
     font-weight: 600;
-    color: #162446;
-    letter-spacing: -0.02em;
-    margin-bottom: 1.5rem;
+    color: #5F6474; /* Darker text for light chrome */
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
 }
 
-.about-container p {
-    font-size: 1rem;
-    color: #6e6e73;
-    line-height: 1.8;
-    margin-bottom: 1.2rem;
+.mac-body {
+    padding: 2.5rem;
+    background: #FFFFFF; /* White body matching home */
+    flex: 1; /* Stretch nicely to make them symmetrical */
+    display: flex;
+    align-items: center;
 }
 
-.about-container p:last-child {
-    color: #162446;
-    font-weight: 500;
+.mac-body p {
+    font-size: 1.15rem;
+    color: #333333; /* Dark text for readability on white */
+    line-height: 1.7;
+    margin: 0;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.mac-window:hover .mac-body p {
+    color: #000000;
 }
