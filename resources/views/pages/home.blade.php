@@ -33,7 +33,6 @@
     </div>
 </div>
 
-<!-- Mockup Reparaciones -->
 <section class="home-index">
     <div class="dashboard-showcase">
         
@@ -56,7 +55,6 @@
                 2 técnicos activos
             </div>
             
-            <!-- Mac Window -->
             <div class="showcase-window">
                 <div class="showcase-chrome">
                     <div class="chrome-dots">
@@ -169,7 +167,6 @@
         </div>
     </div>
 
-    <!-- Mockup Clientes -->
     <div class="dashboard-showcase" style="margin-top: 4rem;">
         
         <div class="showcase-intro">
@@ -191,7 +188,6 @@
                 10 nuevos
             </div>
             
-            <!-- Mac Window -->
             <div class="showcase-window">
                 <div class="showcase-chrome">
                     <div class="chrome-dots">

@@ -14,7 +14,6 @@
             </header>
 
             <div class="mac-grid">
-                <!-- Mac Window 1 -->
                 <article class="mac-window">
                     <div class="mac-chrome">
                         <div class="mac-dots">
@@ -29,7 +28,6 @@
                     </div>
                 </article>
 
-                <!-- Mac Window 2 -->
                 <article class="mac-window">
                     <div class="mac-chrome">
                         <div class="mac-dots">
@@ -44,7 +42,6 @@
                     </div>
                 </article>
 
-                <!-- Mac Window 3 -->
                 <article class="mac-window">
                     <div class="mac-chrome">
                         <div class="mac-dots">
@@ -59,7 +56,6 @@
                     </div>
                 </article>
 
-                <!-- Mac Window 4 -->
                 <article class="mac-window">
                     <div class="mac-chrome">
                         <div class="mac-dots">
